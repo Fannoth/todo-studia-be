@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["*.json"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/tasks",
+      "dest": "/index.ts"
+    },
+    {
+      "src": "/api/tasks/([^/]+)",
+      "dest": "/index.ts"
+    }
+  ]
+}
